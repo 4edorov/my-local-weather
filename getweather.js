@@ -23,9 +23,9 @@ function geoFindMe() {
     
     function errorMyLocation(error) {
         output.innerHTML = "Unable to retrieve you location";
-    } 
+    }
     
     navigator.geolocation.getCurrentPosition(myLocation, errorMyLocation, {maximumAge: 600000});
 }
 
-geoFindMe();
+//geoFindMe();

@@ -14,8 +14,10 @@
 <body>
     
     <div class="jumbotron text-center">
-        <h1>My Local Weather</h1>
-        
+        <button type="button" class="btn btn-primary getWeather">
+            <h2>My Local Weather</h2>
+        </button>
+        <p class="message"></p>
     </div>
     
     <div class="container">
@@ -28,7 +30,7 @@
             <div class="col-sm-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading text-center">City and country</div>
-                    <div class="panel-body"></div>
+                    <div class="panel-body text-center myCityAndCountry"></div>
                 </div>
             </div>
         </div>
@@ -36,10 +38,10 @@
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading text-center">Temperature</div>
-                    <div class="panel-body"></div>
-                    <div class="panel-footer">
+                    <div class="panel-body text-center myTemperature"></div>
+                    <div class="panel-footer text-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-primary">&#8451;</button>
+                            <button type="button" class="btn btn-primary active">&#8451;</button>
                             <button type="button" class="btn btn-primary">&#8457;</button>
                         </div>
                     </div>
@@ -48,13 +50,13 @@
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading text-center">Pressure</div>
-                    <div class="panel-body"></div>
+                    <div class="panel-body text-center myPressure"></div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading text-center">Humidity</div>
-                    <div class="panel-body"></div>
+                    <div class="panel-body text-center myHumidity"></div>
                 </div>
             </div>
         </div>
@@ -62,25 +64,25 @@
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading text-center">Description</div>
-                    <div class="panel-body"></div>
+                    <div class="panel-body text-center myDescription"></div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading text-center">My weather</div>
-                    <div class="panel-body"></div>
+                    <div class="panel-body text-center myIconWeather"></div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading text-center">Wind</div>
-                    <div class="panel-body"></div>
+                    <div class="panel-body text-center myWind"></div>
                 </div>
             </div>
         </div>
     </div>
     
-    <div class="container-fluid text-center navbar-fixed-bottom">
+    <div class="container-fluid text-center">
         <p>Created by @4edorov</p>
     </div>
     

@@ -1,12 +1,12 @@
 // Receive geolocation data
 function geoFindMe() {
     
-    var output = document.getElementById("out");
+    var output = document.getElementById("outState");
     
-    /*if (!navigator.geolocation) {
-        output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+    if (!navigator.geolocation) {
+        output.innerHTML = "<div class='alert alert-danger'><strong>Wrong! </strong>Geolocation is not supported by your browser</div>";
         return;
-    }*/
+    }
     
     function myLocation(position) {
         
@@ -38,7 +38,12 @@ function geoFindMe() {
         
         var weather = new Promise(function(resolve, reject) {
             $.getJSON(myRequest, function(jsonOWMRespond) {
-                resolve(jsonOWMRespond);
+                if (jsonOWMRespond) {
+                    output.innerHTML = "<div class='alert alert-success'><strong>Success! </strong> Data recieved</div>";
+                    resolve(jsonOWMRespond);
+                } else {
+
+                }
             });
         });
             
@@ -53,6 +58,8 @@ function geoFindMe() {
             $(".myDescription").html(value.weather[0]["description"]);
             $(".myIconWeather").html("<img src='" + myIconWeather + "' class='img-responsive imgIcon' alt='Image icon'>");
             $(".myWind").html(myWind);
+        }, function(reason) {
+            output.innerHTML = "<div class='alert alert-danger'><strong>Wrong! </strong>No data from server" + reason + "</div>";
         });
         
         /* Standard request and respond from OpenWeatherMap
@@ -71,8 +78,8 @@ function geoFindMe() {
         */
     }
     
-    function errorMyLocation(error) {
-        output.innerHTML = "Unable to retrieve you location";
+    function errorMyLocation() {
+        output.innerHTML = "<div class='alert alert-danger'><strong>Wrong! </strong>Unable to retrieve you location</div>";
     }
     
     navigator.geolocation.getCurrentPosition(myLocation, errorMyLocation, {maximumAge: 600000});
@@ -81,5 +88,7 @@ function geoFindMe() {
 $(document).ready(function() {
     $(".getWeather").on("click", function() {
         geoFindMe();
+        var bgWeather = "url(http://wallpaper.zone/img/4665942.jpg)";
+        $(".bgWeather").css('background-image', bgWeather);
     });
 });

@@ -14,6 +14,7 @@ function geoFindMe() {
         myLat = position.coords.latitude;
         
         var myAPPID = "96211e2aa251a6f826cb4f8155285d24";
+        // To proper work it must be added at the begin of url: https://cors-anywhere.herokuapp.com/
         var myRequest = "http://api.openweathermap.org/data/2.5/weather?" + "lat=" + myLat + "&lon=" + myLon + "&units=metric&APPID=" + myAPPID;
         
         /* Example of OpenWeatherMap respond 

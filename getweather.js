@@ -18,7 +18,38 @@ function geoFindMe() {
         var myRequest = "http://api.openweathermap.org/data/2.5/weather?" + "lat=" + myLat + "&lon=" + myLon + "&units=metric&APPID=" + myAPPID;
         
         /* Example of OpenWeatherMap respond 
-
+         {"coord":{"lon":47.68,"lat":35.56},
+         "weather":[{
+         "id":600,
+         "main":"Snow",
+         "description":"light snow",
+         "icon":"13n"
+         }],
+         "base":"stations",
+         "main":{
+         "temp":-0.25,
+         "pressure":1008,
+         "humidity":92,
+         "temp_min":-1,
+         "temp_max":0
+         },
+         "visibility":10000,
+         "wind":{
+         "speed":8,
+         "deg":260
+         },
+         "clouds":{"all":90},
+         "dt":1485192600,
+         "sys":{
+         "type":1,
+         "id":7323,
+         "message":0.0057,
+         "country":"RU",
+         "sunrise":1485149810,
+         "sunset":1485179139},
+         "id":473157,
+         "name":"Ivanovsky Posëlok",
+         "cod":200}
         */
         
         /* Request and respond from OpenWeatherMap with Promise!!! */
@@ -41,7 +72,7 @@ function geoFindMe() {
             myTemperatureInC = value.main.temp;
             $(".myCityAndCountry").html(myCityAndCountry);
             $(".myTemperature").html(myTemperatureInC);
-            $(".inC").css('class', active);
+            $(".toC").addClass("active");
             $(".myPressure").html(value.main.pressure + " hPa");
             $(".myHumidity").html(value.main.humidity + " %");
             $(".myDescription").html(value.weather[0]["description"]);
@@ -87,10 +118,17 @@ $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
 });
 
-// Convert temperature to F
+// Convert temperature to F and to C
 $(document).ready(function() {
-    $('.toF').on("click", function() {
+    $(".toF").on("click", function() {
         myTemperatureInF = myTemperatureInC * 1.8 + 32;
-        $('.myTemperature').html(myTemperatureInF);
+        $(".myTemperature").html(myTemperatureInF);
+        $(".toF").addClass("active");
+        $(".toC").removeClass("active");
+    })
+    $(".toC").on("click", function() {
+        $(".myTemperature").html(myTemperatureInC);
+        $(".toC").addClass("active");
+        $(".toF").removeClass("active");
     })
 });

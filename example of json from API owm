@@ -1,1 +1,35 @@
 
+        {
+         "coord":{"lon":47.68,"lat":35.56},
+         "weather":[{
+         "id":600,
+         "main":"Snow",
+         "description":"light snow",
+         "icon":"13n"
+         }],
+         "base":"stations",
+         "main":{
+         "temp":-0.25,
+         "pressure":1008,
+         "humidity":92,
+         "temp_min":-1,
+         "temp_max":0
+         },
+         "visibility":10000,
+         "wind":{
+         "speed":8,
+         "deg":260
+         },
+         "clouds":{"all":90},
+         "dt":1485192600,
+         "sys":{
+         "type":1,
+         "id":7323,
+         "message":0.0057,
+         "country":"RU",
+         "sunrise":1485149810,
+         "sunset":1485179139},
+         "id":473157,
+         "name":"Ivanovsky Posëlok",
+         "cod":200
+         }

@@ -18,21 +18,7 @@ function geoFindMe() {
         var myRequest = "http://api.openweathermap.org/data/2.5/weather?" + "lat=" + myLat + "&lon=" + myLon + "&units=metric&APPID=" + myAPPID;
         
         /* Example of OpenWeatherMap respond 
-        var jsonOWMRespond = {
-            "coord":{"lon":37.78,"lat":55.76},
-            "weather":[{
-                "id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],
-            "base":"stations",
-            "main":{"temp":267.65,"pressure":1032,"humidity":79,"temp_min":267.15,"temp_max":268.15},
-            "visibility":10000,
-            "wind":{"speed":6,"deg":280},
-            "clouds":{"all":90},
-            "dt":1484712000,
-            "sys":{"type":1,"id":7323,"message":0.0083,"country":"RU","sunrise":1484718286,"sunset":1484746471},
-            "id":473157,
-            "name":"Vladimirskiy Posëlok",
-            "cod":200
-        }
+
         */
         
         /* Request and respond from OpenWeatherMap with Promise!!! */

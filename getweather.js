@@ -43,7 +43,7 @@ function geoFindMe() {
                     output.innerHTML = "<div class='alert alert-success'><strong>Success! </strong> Data recieved</div>";
                     resolve(jsonOWMRespond);
                 } else {
-
+                    reject("Error");
                 }
             });
         });
@@ -52,8 +52,10 @@ function geoFindMe() {
             var myCityAndCountry = value.name + ", " + value.sys.country;
             var myWind = value.wind.speed + " m/sec; " + value.wind.deg + " degrees";
             var myIconWeather = "http://openweathermap.org/img/w/" + value.weather[0]["icon"] + ".png";
+            myTemperatureInC = value.main.temp;
             $(".myCityAndCountry").html(myCityAndCountry);
-            $(".myTemperature").html(value.main.temp);
+            $(".myTemperature").html(myTemperatureInC);
+            $(".inC").css('class', active);
             $(".myPressure").html(value.main.pressure + " hPa");
             $(".myHumidity").html(value.main.humidity + " %");
             $(".myDescription").html(value.weather[0]["description"]);
@@ -92,4 +94,17 @@ $(document).ready(function() {
         var bgWeather = "url(http://wallpaper.zone/img/4665942.jpg)";
         $(".bgWeather").css('background-image', bgWeather);
     });
+});
+
+// For tooltips elements
+$(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+// Convert temperature to F
+$(document).ready(function() {
+    $('.toF').on("click", function() {
+        myTemperatureInF = myTemperatureInC * 1.8 + 32;
+        $('.myTemperature').html(myTemperatureInF);
+    })
 });

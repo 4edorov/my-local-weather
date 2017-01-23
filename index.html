@@ -14,7 +14,7 @@
 <body>
     
     <div class="jumbotron text-center bgWeather">
-        <button type="button" class="btn btn-primary getWeather">
+        <button type="button" class="btn btn-primary getWeather" data-toggle="tooltip" title="To request weather" data-placement="auto bottom">
             <h3>My Local Weather</h3>
         </button>
         <div id="outState"></div>
@@ -41,8 +41,8 @@
                     <div class="panel-body text-center myTemperature"></div>
                     <div class="panel-footer text-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-primary active">&#8451;</button>
-                            <button type="button" class="btn btn-primary">&#8457;</button>
+                            <button type="button" class="btn btn-primary toC">&#8451;</button>
+                            <button type="button" class="btn btn-primary toF">&#8457;</button>
                         </div>
                     </div>
                 </div>

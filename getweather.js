@@ -70,14 +70,89 @@ function geoFindMe() {
             var myWind = value.wind.speed + " m/sec; " + value.wind.deg + " degrees";
             var myIconWeather = "http://openweathermap.org/img/w/" + value.weather[0]["icon"] + ".png";
             myTemperatureInC = value.main.temp;
+            myBgWeather = value.weather[0]["icon"];
             $(".myCityAndCountry").html(myCityAndCountry);
             $(".myTemperature").html(myTemperatureInC);
             $(".toC").addClass("active");
+            $(".toF").removeClass("active");
             $(".myPressure").html(value.main.pressure + " hPa");
             $(".myHumidity").html(value.main.humidity + " %");
             $(".myDescription").html(value.weather[0]["description"]);
             $(".myIconWeather").html("<img src='" + myIconWeather + "' class='img-responsive imgIcon' alt='Image icon'>");
             $(".myWind").html(myWind);
+
+            if (myBgWeather == "01d") {
+                var bgWeather = "url(http://images.fineartamerica.com/images-medium-large-5/green-grass-panorama-on-blue-sky-michal-bednarek.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "01n") {
+                var bgWeather = "url(http://mscookietookie.com/wp-content/uploads/2015/04/night-sky-hd-wallpaper-2-900x300.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "02d") {
+                var bgWeather = "url(http://www.kinotronic.ru/wp-content/uploads/2012/06/white-clouds-on-blue-sky-cambodia-dual-screen-widescreen-wallpaper-y-g-ibackgroundz.com_-900x300.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "02n") {
+                var bgWeather = "url(http://emiliamaciejewska.pl/wp-content/uploads/2016/01/158H-900x300.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "03d") {
+                var bgWeather = "url(http://www.kinotronic.ru/wp-content/uploads/2012/06/white-clouds-on-blue-sky-cambodia-dual-screen-widescreen-wallpaper-y-g-ibackgroundz.com_-900x300.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "03n") {
+                var bgWeather = "url(http://emiliamaciejewska.pl/wp-content/uploads/2016/01/158H-900x300.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "04d") {
+                var bgWeather = "url(http://images.fineartamerica.com/images-medium-large-5/blue-sky-and-building-storm-clouds-panorama-fine-art-print-keith-webber-jr.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "04n") {
+                var bgWeather = "url(http://www.elisaforsgren.com/wp-content/uploads/2015/06/December-2014-Storm-900x300.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "09d") {
+                var bgWeather = "url(http://img15.deviantart.net/7541/i/2015/209/c/9/sunday_morning_by_jonuriah-d938d24.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "09n") {
+                var bgWeather = "url(http://urgant-tv.ru/_ph/2/169277172.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "10d") {
+                var bgWeather = "url(http://www.localtoglobal.org/images/rain.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "10n") {
+                var bgWeather = "url(http://urgant-tv.ru/_ph/2/169277172.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "11d") {
+                var bgWeather = "url(http://www.benmessina.com/FB/PICS/LARGE/Passing_Storm_Sunshine_Coast.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "11n") {
+                var bgWeather = "url(http://pixdaus.com/files/items/pics/7/38/569738_fdfc5aa5a2b7bef4887ccae19c3fefba_large.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "13d") {
+                var bgWeather = "url(https://dl.dropboxusercontent.com/s/4acjg9y5p2728m4/gameofthroens_heroes_08.jpg?dl=0)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "13n") {
+                var bgWeather = "url(https://www.bsr.org/images/sized/images/heroes/2016-12-1-where-bsr-be-december-blog-hero-900x300.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "50d") {
+                var bgWeather = "url(http://photos.lifeisphoto.ru/167/0/1675503.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
+            if (myBgWeather == "50n") {
+                var bgWeather = "url(http://images.fineartamerica.com/images-medium-large/foggy-night-mike-nellums.jpg)";
+                $(".bgWeather").css('background-image', bgWeather);
+            }
         }, function(reason) {
             output.innerHTML = "<div class='alert alert-danger'><strong>Wrong! </strong>No data from server" + reason + "</div>";
         });
@@ -108,8 +183,6 @@ function geoFindMe() {
 $(document).ready(function() {
     $(".getWeather").on("click", function() {
         geoFindMe();
-        var bgWeather = "url(http://wallpaper.zone/img/4665942.jpg)";
-        $(".bgWeather").css('background-image', bgWeather);
     });
 });
 

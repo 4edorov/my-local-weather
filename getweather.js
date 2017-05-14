@@ -180,10 +180,8 @@ function geoFindMe() {
     navigator.geolocation.getCurrentPosition(myLocation, errorMyLocation, {maximumAge: 600000});
 }
 
-$(document).ready(function() {
-    $(".getWeather").on("click", function() {
-        geoFindMe();
-    });
+$(document).on('click', '.getWeather', function() {
+   geoFindMe();
 });
 
 // For tooltips elements
